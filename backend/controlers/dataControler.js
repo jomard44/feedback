@@ -22,7 +22,11 @@ const getFeedback = async (req, res) => {
 const postFeedback = async (req, res) => {
     try {
         const { title, comment, file } = req.body;
-        const newFeedback = new Feedback({ title, comment, file });
+        
+        const newFeedback = new Feedback({ title, comment, file});
+        
+       const baseURL = req.protocol + '://' + req.get('host');
+        newFeedback.url = `${baseURL}/feedbacks/${newFeedback._id}`;
         await newFeedback.save();
         res.status(201).json(newFeedback);
     } catch (error) {

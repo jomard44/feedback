@@ -15,6 +15,10 @@ const feedbackSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
+    url: {
+        type: String,
+        required: false,
+    },
     createdAt: {
      
             type: Date,

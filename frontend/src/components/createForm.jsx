@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import './createForm.css'; 
 
 function CreateForm() {
@@ -28,15 +28,22 @@ function CreateForm() {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       } 
+      const result = await response.json();
+      alert(result.url)
       console.log('Form submitted:');
+    
+      setTitle('');
+      setComment('');
+      setFile('');
    
     }
     catch (error) {
       console.error('Error submitting form:', error);
     }
     
-    
+   
   };
+
 
 
   return (

@@ -5,7 +5,8 @@ function Table() {
 
   const [data, setData] = useState([]);
 
-  fetch("http://localhost:3000/feedbacks")
+  useEffect(() => { 
+    fetch("http://localhost:3000/feedbacks")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
@@ -14,6 +15,8 @@ function Table() {
     .catch((error) => {
       console.error("Error fetching data:", error);
     });
+  },[])
+ 
   return (
     <table>
       <thead>
