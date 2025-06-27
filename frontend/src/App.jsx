@@ -1,5 +1,6 @@
 import Nav from './components/Nav.jsx';
 import Table from './components/Table.jsx';
+import CreateForm from './components/createForm.jsx';
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <Nav />
       <Table />
+      <CreateForm />
     </>
   )
 }
